@@ -1,0 +1,30 @@
+#%RAML 1.0
+title: emp-onboard-api
+description: employee onboarding api
+baseUri: https://localhost:8081/emp-api/v1
+
+securitySchemes:
+  OAuthSecurity:
+    type: Basic Authentication
+    description: security enabled
+    describedBy:
+      headers:
+        Authorization: string
+
+securedBy:
+  - OAuthSecurity
+
+/flight:
+  get:
+    queryParameters:
+      empId:
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "message": "india",
+                "name": "suresh"
+              }
+        
